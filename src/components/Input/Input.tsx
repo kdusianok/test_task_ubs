@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({
 
   const onEnterHandler = useCallback(
     (e: React.KeyboardEvent) => {
-      if (e.key === "Enter") onEnter();
+      if (e.key === "Enter" && onEnter) onEnter();
     },
     [onEnter]
   );

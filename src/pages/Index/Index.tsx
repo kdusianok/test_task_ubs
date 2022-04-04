@@ -16,6 +16,7 @@ const Index: React.FC = () => {
   return (
     <div>
       <div className={styles.header}>
+        <h2>sounds from freesound.org</h2>
         <Input
           value={query}
           onChange={setQuery}
