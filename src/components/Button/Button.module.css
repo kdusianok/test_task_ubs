@@ -5,7 +5,8 @@
   height: 30px;
   padding: 0 30px 0 30px;
   font-weight: 700;
-  background-color: orange;
+  color: #ffffff;
+  background-color: #0082d1;
 }
 
 .button:hover {

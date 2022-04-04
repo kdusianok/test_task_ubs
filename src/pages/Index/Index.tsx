@@ -2,21 +2,20 @@ import React, { useState } from "react";
 import Table from "components/Table/Table";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
+import Loader from "components/Loader/Loader";
 import useFreeSound from "utils/useFreeSound";
+import columns from "./columns.json";
+import styles from "./Index.module.css";
 
 const Index: React.FC = () => {
   const [query, setQuery] = useState("");
-  const { listOfSounds, errorRequest, onSearch } = useFreeSound({ query });
+  const { listOfSounds, loading, errorRequest, onSearch } = useFreeSound({
+    query
+  });
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: 20
-        }}
-      >
+      <div className={styles.header}>
         <Input
           value={query}
           onChange={setQuery}
@@ -24,29 +23,11 @@ const Index: React.FC = () => {
           endAdornment={<Button onClick={onSearch}>SEARCH</Button>}
         />
       </div>
-      <Table
-        columns={[
-          {
-            title: "ID",
-            name: "id",
-            style: {
-              width: "10%"
-            }
-          },
-          {
-            title: "Name of song",
-            name: "name",
-            style: {
-              width: "30%"
-            }
-          },
-          {
-            title: "Player",
-            name: "player"
-          }
-        ]}
-        data={listOfSounds}
-      />
+      {errorRequest && (
+        <div className={styles.errorMessage}>{errorRequest}</div>
+      )}
+      {loading && <Loader />}
+      <Table columns={columns} data={listOfSounds} />
     </div>
   );
 };
