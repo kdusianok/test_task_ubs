@@ -1,0 +1,15 @@
+.table {
+  width: 100%;
+  border-collapse: collapse !important;
+}
+
+.table,
+.th,
+.td {
+  border: 1px solid;
+}
+
+.th {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.07);
+}

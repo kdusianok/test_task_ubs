@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1px 1px 1px 1px;
+}
+
+.input {
+  border: none;
+  height: 30px;
+  min-width: 60px;
+  width: 100%;
+  background: none !important;
+  padding: 0 20px 0 20px;
+}
+
+.input:focus {
+  outline: none;
+}
